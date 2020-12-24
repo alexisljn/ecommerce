@@ -1,4 +1,5 @@
 <p>{{ article.name }}</p>
-<p>{{ article.price }}</p>
-<p>{{ article.stock }}</p>
+<img [src]="article.imageUrl"[alt]="article.name" width="200px" height="200px">
+<p>Prix : {{ article.price }}</p>
+<p>Quantité : {{ article.stock }}</p>
 <button (click)="addArticleToCart(article)" >Ajouter</button>
