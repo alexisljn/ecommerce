@@ -1,0 +1,6 @@
+
+<app-cart [cart]="cart"></app-cart>
+
+<div *ngFor="let article of stock">
+  <app-article [article]="article" (click)="changeCart(article)"></app-article>
+</div>
