@@ -1,5 +1,8 @@
-<p>{{ article.name }}</p>
-<img [src]="article.imageUrl"[alt]="article.name" width="200px" height="200px">
-<p>Prix : {{ article.price }}</p>
+<div class="col-lg-4 panel panel-default padding-md margin-x-md">
+<p class="h3">{{ article.name }}</p>
+  <img [src]="article.imageUrl"[alt]="article.name" width="200px" height="200px">
+
+<p>Prix : <span class="label label-primary">{{ article.price | currency:'EUR' }}</span></p>
 <p>Quantité : {{ article.stock }}</p>
-<button *ngIf="article.stock > 0" (click)="addArticleToCart(article)">Ajouter</button>
+<button class="btn btn-success" *ngIf="article.stock > 0" (click)="addArticleToCart(article)">Ajouter</button>
+</div>

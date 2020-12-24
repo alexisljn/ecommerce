@@ -1,9 +1,9 @@
-<p>Votre panier</p>
-<ul>
-  <li *ngFor="let article of cart.articles">
-    {{article.name}} - quantité : {{article.quantity}}
-    <button *ngIf="hasStock(article.name)" (click)="addArticleToCart(article)">+</button>
-    <button (click)="removeArticleFromCart(article)">-</button>
-  </li>
-  <p>Total : {{cart.total}}</p>
-</ul>
+<div>
+  <p class="">Votre panier</p>
+  <div class="margin-bottom-md" *ngFor="let article of cart.articles">
+    <p><strong class="margin-right-sm">{{article.name}}</strong><span class="badge">{{article.quantity}}</span></p>
+    <button class="btn btn-danger" (click)="removeArticleFromCart(article)">-</button>
+    <button class="btn btn-success margin-right-sm" *ngIf="hasStock(article.name)" (click)="addArticleToCart(article)">+</button>
+  </div>
+  <p><span class="glyphicon glyphicon-shopping-cart"></span> {{cart.total}}</p>
+</div>

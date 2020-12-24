@@ -1,6 +1,7 @@
-
+<p class="h1 text-center">Boutique en ligne</p>
 <app-cart [cart]="cart" [stock]="stock"></app-cart>
 
+<p class="h2">Produits</p>
 <div *ngFor="let article of stock">
   <app-article [article]="article" [cart]="cart"></app-article>
 </div>
