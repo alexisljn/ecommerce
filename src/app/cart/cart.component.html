@@ -1,7 +1,7 @@
 <p>Votre panier</p>
 <ul>
   <li *ngFor="let article of cart.articles">
-    {{article.name}};
+    {{article.name}} - quantité : {{article.quantity}};
   </li>
   <p>Total : {{cart.total}}</p>
 </ul>

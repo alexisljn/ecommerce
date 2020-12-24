@@ -12,17 +12,17 @@ export class AppComponent {
   stock = [
     {
       name: 'PlayStation 5',
-      price: 513.49,
+      price: 500,
       stock: 25
     },
     {
       name: 'Microsoft Xbox Series X',
-      price: 499,
+      price: 450,
       stock: 3
     },
     {
       name: 'Nintendo Switch',
-      price: 399.99,
+      price: 300,
       stock: 7
     },
     {
@@ -43,7 +43,7 @@ export class AppComponent {
     const articlesNames = this.cart.articles.map(articleCart => articleCart.name);
 
     if (articlesNames.includes(article.name)) {
-       this.cart.articles.forEach((articleCart) => {
+      this.cart.articles.forEach((articleCart) => {
         if (articleCart.name === article.name) { articleCart.quantity++; }
       });
 
@@ -53,7 +53,7 @@ export class AppComponent {
       this.cart.articles.push(article);
 
     }
-
+    this.cart.total += article.price;
     article.stock --;
   };
 
