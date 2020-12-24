@@ -26,7 +26,7 @@ export class ArticleComponent implements OnInit {
     if (articlesNames.includes(article.name)) {
       this.cart.articles.forEach((articleCart) => {
         if (articleCart.name === article.name) { articleCart.quantity++; }
-    });
+      });
 
     } else {
 
@@ -47,3 +47,4 @@ export class ArticleComponent implements OnInit {
   }
 
 }
+

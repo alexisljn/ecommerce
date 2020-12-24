@@ -38,4 +38,47 @@ export class CartComponent implements OnInit {
 
   }
 
+  addArticleToCart = (article) => {
+    const articlesNames = this.cart.articles.map(articleCart => articleCart.name);
+
+
+    if (articlesNames.includes(article.name)) {
+      this.cart.articles.forEach((articleCart) => {
+        if (articleCart.name === article.name) { articleCart.quantity++; }
+      });
+
+    } else {
+
+      article.quantity = 1;
+      this.cart.articles.push(article);
+
+    }
+
+    this.cart.total += article.price;
+    article.stock --;
+
+    if (article.stock === 0) {
+
+    }
+  };
+
+  hasStock = (articleName) => {
+    console.log(articleName);
+
+    let index = 0;
+
+    const articlesNamesInStock = this.stock.map(articleStock => articleStock.name);
+
+    console.log('articles du stock', articlesNamesInStock);
+
+    index = articlesNamesInStock.indexOf(articleName);
+
+    console.log("index a utiliser", index);
+
+    if (this.stock[index].stock > 0) return true;
+
+    return false;
+
+  }
+
 }
