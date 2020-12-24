@@ -7,8 +7,7 @@ import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 })
 export class ArticleComponent implements OnInit {
 
-  @Input() article: {
-  };
+  @Input() article: {};
 
   @Input() cart;
 
@@ -16,6 +15,7 @@ export class ArticleComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+
   }
 
   addArticleToCart(article): void {
@@ -41,8 +41,6 @@ export class ArticleComponent implements OnInit {
     if (article.stock === 0) {
 
     }
-
-
 
   }
 
