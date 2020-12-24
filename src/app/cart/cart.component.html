@@ -5,5 +5,5 @@
     <button class="btn btn-danger" (click)="removeArticleFromCart(article)">-</button>
     <button class="btn btn-success margin-right-sm" *ngIf="hasStock(article.name)" (click)="addArticleToCart(article)">+</button>
   </div>
-  <p><span class="glyphicon glyphicon-shopping-cart"></span> {{cart.total}}</p>
+  <p><span class="glyphicon glyphicon-shopping-cart"></span> {{cart.total | currency:'EUR'}}</p>
 </div>
