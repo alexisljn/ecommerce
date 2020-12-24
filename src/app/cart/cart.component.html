@@ -1,7 +1,7 @@
 <p>Votre panier</p>
 <ul>
   <li *ngFor="let article of cart.articles">
-    {{article.name}} - quantité : {{article.quantity}};
+    {{article.name}} - quantité : {{article.quantity}} <button (click)="removeArticleFromCart(article)">-</button>
   </li>
   <p>Total : {{cart.total}}</p>
 </ul>

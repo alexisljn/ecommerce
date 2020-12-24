@@ -41,28 +41,7 @@ export class AppComponent {
     articles: []
   };
 
-  changeCart = (article) => {
-    console.log(this.cart);
-
-    const articlesNames = this.cart.articles.map(articleCart => articleCart.name);
-
-    if (articlesNames.includes(article.name)) {
-      this.cart.articles.forEach((articleCart) => {
-        if (articleCart.name === article.name) { articleCart.quantity++; }
-      });
-
-    } else {
-
-      article.quantity = 1;
-      this.cart.articles.push(article);
-
-    }
-    this.cart.total += article.price;
-    article.stock --;
-  };
-
-  constructor() {
-  }
+  constructor() {}
 
 
 

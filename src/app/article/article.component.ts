@@ -10,7 +10,8 @@ export class ArticleComponent implements OnInit {
   @Input() article: {
   };
 
-  @Output() addArticle: EventEmitter<any> = new EventEmitter();
+  @Input() cart;
+
 
   constructor() { }
 
@@ -18,7 +19,31 @@ export class ArticleComponent implements OnInit {
   }
 
   addArticleToCart(article): void {
-    this.addArticle.emit(article);
+
+    const articlesNames = this.cart.articles.map(articleCart => articleCart.name);
+
+
+    if (articlesNames.includes(article.name)) {
+      this.cart.articles.forEach((articleCart) => {
+        if (articleCart.name === article.name) { articleCart.quantity++; }
+    });
+
+    } else {
+
+      article.quantity = 1;
+      this.cart.articles.push(article);
+
+    }
+
+    this.cart.total += article.price;
+    article.stock --;
+
+    if (article.stock === 0) {
+
+    }
+
+
+
   }
 
 }

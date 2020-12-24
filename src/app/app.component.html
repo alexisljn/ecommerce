@@ -1,6 +1,6 @@
 
-<app-cart [cart]="cart"></app-cart>
+<app-cart [cart]="cart" [stock]="stock"></app-cart>
 
 <div *ngFor="let article of stock">
-  <app-article [article]="article" (click)="changeCart(article)"></app-article>
+  <app-article [article]="article" [cart]="cart"></app-article>
 </div>
